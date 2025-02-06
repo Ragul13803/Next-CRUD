@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { connectToDatabase } from '../../../lib/mongodb';
 
 // GET /api/users - Fetch all users from the database
-export async function GET() { 
+export async function GET() {
   try {
     const db = await connectToDatabase();
     const customers = await db.collection('customers').find().toArray();
